@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="atividade_charles">
+  <ClassDiagramComponents>
+    <Class name="Aluno" package="atividade_charles" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="package"/>
+        <Field name="CPF" type="String" visibility="package"/>
+        <Field name="matricula" type="int" visibility="package"/>
+        <Field name="turma" type="Turma" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="AvaliacaoEletronica" package="atividade_charles" visibility="public" xPosition="20.0" yPosition="312.0">
+      <Fields>
+        <Field name="professor" type="Professor" visibility="package"/>
+        <Field name="disciplina" type="Disciplina" visibility="package"/>
+        <Field name="titulo" type="String" visibility="package"/>
+        <Field name="descricao" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Disciplina" package="atividade_charles" visibility="public" xPosition="253.0" yPosition="10.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Professor" package="atividade_charles" visibility="public" xPosition="389.0" yPosition="360.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Questao" package="atividade_charles" visibility="public" xPosition="623.0" yPosition="255.0">
+      <Fields>
+        <Field name="professor" type="Professor" visibility="package"/>
+        <Field name="disciplina" type="Disciplina" visibility="package"/>
+        <Field name="turma" type="Turma" visibility="package"/>
+        <Field name="peso" type="double" visibility="package"/>
+        <Field name="questao_a" type="String" visibility="package"/>
+        <Field name="questao_b" type="String" visibility="package"/>
+        <Field name="questao_c" type="String" visibility="package"/>
+        <Field name="questao_d" type="String" visibility="package"/>
+        <Field name="questao_e" type="String" visibility="package"/>
+        <Field name="enunciado" type="String" visibility="package"/>
+        <Field name="questao_correta" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Turma" package="atividade_charles" visibility="public" xPosition="547.0" yPosition="20.0">
+      <Fields>
+        <Field name="codigo" type="int" visibility="package"/>
+        <Field name="serie" type="String" visibility="package"/>
+        <Field name="capacidade" type="int" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="professor" source="atividade_charles.Questao" target="atividade_charles.Professor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="turma" source="atividade_charles.Questao" target="atividade_charles.Turma" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="disciplina" source="atividade_charles.Questao" target="atividade_charles.Disciplina" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="disciplina" source="atividade_charles.AvaliacaoEletronica" target="atividade_charles.Disciplina" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="professor" source="atividade_charles.AvaliacaoEletronica" target="atividade_charles.Professor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="turma" source="atividade_charles.Aluno" target="atividade_charles.Turma" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
